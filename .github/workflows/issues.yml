@@ -9,8 +9,8 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v3
         - name: Display Issue Information
-          run: echo "Issue Title==> ${{ github.event.issue.title }}"
-        - name: Display Issue Number
-          run: echo "Issue Number==> ${{ github.event.issue.number }}"          
+          run: echo "Issue Title==> ${{ toJson(github.event.issue.title) }} issue number is ${{ toJson(github.event.issue.number) }}"        
         - name: Display Issue Body
-          run: echo "Issue Body==> ${{ github.event.issue.body }}"
+          run: echo "Issue Body==> ${{ toJson(github.event.issue.body) }}"
+        - name: Display Json
+          run: echo "Issue Json==> ${{ toJson(github.event) }}"
