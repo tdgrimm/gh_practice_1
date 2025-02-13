@@ -1,0 +1,16 @@
+name: Issue Information
+on:
+    issues:
+      types: [opened]
+jobs:
+    issue_information:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+        - name: Display Issue Information
+          run: echo "Issue Title==> ${{ github.event.issue.title }}"
+        - name: Display Issue Number
+          run: echo "Issue Number==> ${{ github.event.issue.number }}"          
+        - name: Display Issue Body
+          run: echo "Issue Body==> ${{ github.event.issue.body }}"
