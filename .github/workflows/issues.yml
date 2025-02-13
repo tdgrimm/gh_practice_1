@@ -1,7 +1,7 @@
 name: Issue Information
 on:
     issues:
-      types: [opened, edited, deleted]
+      types: [opened, edited, closed, deleted]
     issue_comment:
       types: [created, edited, deleted]
 jobs:
