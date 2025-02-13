@@ -2,12 +2,12 @@ name: Issue Information
 on:
     issues:
       types: [opened, edited, deleted]
+    issue_comment:
+      types: [created, edited, deleted]
 jobs:
     issue_information:
         runs-on: ubuntu-latest
         steps:
-        - name: Checkout code
-          uses: actions/checkout@v3
         - name: Display Issue Information
           run: echo "Issue Title==> ${{ toJson(github.event.issue.title) }} issue number is ${{ toJson(github.event.issue.number) }}"        
         - name: Display Issue Body
