@@ -9,7 +9,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Display Issue Information
-          run: echo "Issue Title==> ${{ toJson(github.event.issue.title) }} issue number is ${{ toJson(github.event.issue.number) }}"        
+          run: echo "Issue Title==> ${{ toJson(github.event.issue.title) }} issue number is ${{ toJson(github.event.issue.number) }}"  
+        - name: Display Issue Action
+          run: echo "Issue Action==> ${{ toJson(github.event.action) }}"                
         - name: Display Issue Body
           run: echo "Issue Body==> ${{ toJson(github.event.issue.body) }}"
         - name: Display Json
